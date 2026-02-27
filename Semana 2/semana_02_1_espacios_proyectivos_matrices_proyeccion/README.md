@@ -63,7 +63,7 @@ Visualización 3D del cubo original con sus 8 vértices proyectados en el espaci
 
 ![Resultado Python 2](./media/python2.png)
 
-Comparación lado a lado de proyecciones ortográfica (izquierda) y perspectiva (derecha). La proyección ortográfica mantiene proporciones uniformes, mientras que la perspectiva reduce el tamaño de los vértices más alejados del plano de proyección, creando sensación de profundidad.
+Visualización comparativa de dos proyecciones en perspectiva donde se modifica la distancia focal (d). Un valor mayor de d reduce la distorsión y comprime la profundidad visual, mientras que un valor menor amplía el campo de visión (FOV) y exagera la diferencia de tamaño entre objetos cercanos y lejanos.
 
 
 ### Three.js - Implementación
