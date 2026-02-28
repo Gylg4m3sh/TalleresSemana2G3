@@ -156,11 +156,11 @@ Los lentes reales no son perfectos: introducen distorsiones que hacen que línea
 
 #### Distorsión de barril
 
-![Distorsión de barril](/media/distorsion_barril.png)
+![Distorsión de barril](media/distorsion_barril.png)
 
 #### Distorsión de cojin
 
-![Distorsión de cojin](/media/distorsion_cojin.png)
+![Distorsión de cojin](media/distorsion_cojin.png)
 
 El modelo matemático de distorsión radial:
 
@@ -199,7 +199,7 @@ error = np.sqrt(np.mean(np.sum((proj_pts - img_pts)**2, axis=1)))
 
 #### Error modelo en Python
 
-![Error modelo en Python](/media/error_RMS_proyeccion.png)
+![Error modelo en Python](media/error_RMS_proyeccion.png)
 
 | Error          | Calidad                                                      |
 | -------------- | ------------------------------------------------------------ |
@@ -416,7 +416,7 @@ La implementación Three.js hace visible e interactivo el mismo modelo matemáti
 
 #### Modelo en ThreeJS
 
-![Modelo en ThreeJS](/media/modelo_threejs.gif)
+![Modelo en ThreeJS](media/modelo_threejs.gif)
 
 Cada archivo implementa exactamente **una responsabilidad** del modelo pinhole (Principio de Responsabilidad Única):
 
@@ -469,7 +469,7 @@ Se usa `renderer.getSize()` y no `window.innerHeight` porque si el canvas no ocu
 
 La amortiguación o damping de `OrbitControls` (`dampingFactor = 0.06`) añade inercia al movimiento: la cámara frena suavemente al soltar el mouse. Por esto es obligatorio llamar `controls.update()` en cada frame del loop.
 
-![Parametros](/media/parametros_threejs.png)
+![Parametros](media/parametros_threejs.png)
 
 ---
 
@@ -623,7 +623,7 @@ _Gráfico de barras de los coeficientes k1, k2, p1, p2, k3_
 | Distorsión de barril (k1 < 0) | Imagen inflada hacia afuera, bordes curvos                 |
 | Distorsión de cojín (k1 > 0)  | Imagen hundida hacia adentro                               |
 
-![Modelo en ThreeJS](/media/modelo_threejs.png)
+![Modelo en ThreeJS](media/modelo_threejs.png)
 _Interfaz Three.js: escena 3D con overlay de proyección, frustum y panel de parámetros_
 
 ---
