@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-# 1. COORDENADAS HOMOGÉNEAS EN 2D
+# COORDENADAS HOMOGÉNEAS EN 2D
 
 def traslacion(tx, ty):
     return np.array([

@@ -1,0 +1,72 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+canvas {
+  outline: none;
+}
+
+[data-slot="slider-track"] {
+  background: #334155 !important;
+}
+
+[data-slot="slider-range"] {
+  background: linear-gradient(to right, #8b5cf6, #a78bfa) !important;
+}
+
+[data-slot="slider-thumb"] {
+  background: #8b5cf6 !important;
+  border: 2px solid #a78bfa !important;
+}
+
+[data-state="active"][role="tab"] {
+  background: linear-gradient(to bottom, #4c1d95, #5b21b6) !important;
+  color: white !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.canvas-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .tabs-list {
+    flex-wrap: wrap;
+  }
+  
+  .tabs-trigger {
+    flex: 1 1 50%;
+  }
+}
