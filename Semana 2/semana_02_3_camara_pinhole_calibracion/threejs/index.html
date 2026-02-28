@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cámara Pinhole — Three.js</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #070710;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+    }
+
+    canvas { display: block; }
+
+    /* SVG overlay para puntos proyectados 2D */
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Panel de información en esquina superior izquierda */
+    #info-panel {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      background: rgba(5, 5, 20, 0.85);
+      color: #00ffaa;
+      padding: 12px 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 255, 170, 0.25);
+      font-size: 12px;
+      line-height: 1.9;
+      z-index: 20;
+      pointer-events: none;
+      min-width: 240px;
+    }
+
+    #info-panel .label  { color: #6699bb; }
+    #info-panel .value  { color: #ffffff; font-weight: bold; }
+    #info-panel .title  {
+      color: #00ffaa;
+      font-size: 13px;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(0,255,170,0.2);
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* Instrucciones en esquina inferior izquierda */
+    #controls-hint {
+      position: fixed;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(5, 5, 20, 0.75);
+      color: #7788aa;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 11px;
+      line-height: 1.7;
+      z-index: 20;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Overlay SVG para los puntos proyectados 2D -->
+  <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+
+  <!-- Panel de parámetros en tiempo real -->
+  <div id="info-panel">
+    <div class="title">Camara Pinhole — Parametros</div>
+    <div>
+      <span class="label">FOV vertical :  </span>
+      <span class="value" id="val-fov">75</span>
+      <span class="label">°</span>
+    </div>
+    <div>
+      <span class="label">Focal equiv  :  </span>
+      <span class="value" id="val-focal">—</span>
+      <span class="label"> px</span>
+    </div>
+    <div>
+      <span class="label">Near plane   :  </span>
+      <span class="value" id="val-near">0.1</span>
+    </div>
+    <div>
+      <span class="label">Far plane    :  </span>
+      <span class="value" id="val-far">100</span>
+    </div>
+    <div>
+      <span class="label">Puntos 2D    :  </span>
+      <span class="value" id="val-points">0</span>
+      <span class="label"> visibles</span>
+    </div>
+    <div>
+      <span class="label">Distorsion   :  </span>
+      <span class="value" id="val-dist">OFF</span>
+    </div>
+  </div>
+
+  <div id="controls-hint">
+    Click izq + arrastrar → orbitar<br>
+    Rueda del mouse       → zoom<br>
+    Click der + arrastrar → desplazar<br>
+    Panel derecho         → ajustar parametros
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
